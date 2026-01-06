@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FreshClean Laundry Services</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  </head>
+  <body>
+
+    <nav class="navbar">
+      <div class="container">
+        <div class="logo">
+          <i class="fas fa-tshirt"></i>
+          <span>FreshClean</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+        <div class="user">
+          <i class="fas fa-user"></i>
+          <span>Lekhraj</span>
+        </div>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+ 
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-left">
+            <h1>
+              Revitalize Your <span class="highlight">Clothes</span> with Expert
+              Laundry Services!
+            </h1>
+            <p>
+              From premium dry cleaning to swift wash and fold, we deliver care
+              and convenience. Schedule a pickup and rediscover the freshness of
+              your clothes today!
+            </p>
+            <a href="#booking" class="btn-primary">Book a service today!</a>
+          </div>
+          <div class="hero-right">
+            <img
+              src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Laundry Service"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="achievements">
+      <div class="container">
+        <div class="achievement-grid">
+          <div class="achievement-item">
+            <h2>15+</h2>
+            <p>Laundry Services</p>
+          </div>
+          <div class="achievement-item">
+            <h2>240+</h2>
+            <p>Happy Customers</p>
+          </div>
+          <div class="achievement-item">
+            <h2>2+</h2>
+            <p>Years Experience</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="booking" class="booking-section">
+      <div class="container">
+        <h2 id="services" class="section-title">Our Services</h2>
+        <p class="section-subtitle">
+          Click On The Add To Cart Button To Add The Services To Your Cart
+        </p>
+
+        <div class="booking-container">
+          <div class="services-list">
+            <div class="service-item" data-id="1">
+              <div class="service-info">
+                <h3>Dry Cleaning</h3>
+                <p class="service-price">$200.00</p>
+              </div>
+              <button class="service-btn remove-btn">Remove Item</button>
+            </div>
+
+            <div class="service-item" data-id="2">
+              <div class="service-info">
+                <h3>Wash & Fold</h3>
+                <p class="service-price">$100.00</p>
+              </div>
+              <button class="service-btn add-btn">Add Item</button>
+            </div>
+
+            <div class="service-item" data-id="3">
+              <div class="service-info">
+                <h3>Ironing</h3>
+                <p class="service-price">$30.00</p>
+              </div>
+              <button class="service-btn remove-btn">Remove Item</button>
+            </div>
+
+            <div class="service-item" data-id="4">
+              <div class="service-info">
+                <h3>Stain Removal</h3>
+                <p class="service-price">$500.00</p>
+              </div>
+              <button class="service-btn add-btn">Add Item</button>
+            </div>
+
+            <div class="service-item" data-id="5">
+              <div class="service-info">
+                <h3>Leather & Suede Cleaning</h3>
+                <p class="service-price">$999.00</p>
+              </div>
+              <button class="service-btn add-btn">Add Item</button>
+            </div>
+
+            <div class="service-item" data-id="6">
+              <div class="service-info">
+                <h3>Wedding Dress Cleaning</h3>
+                <p class="service-price">$2800.00</p>
+              </div>
+              <button class="service-btn add-btn">Add Item</button>
+            </div>
+
+            <div class="cart-info">
+              <p>
+                <i class="fas fa-info-circle"></i> Add items to the cart from
+                the services bar
+              </p>
+            </div>
+          </div>
+
+          
+          <div class="cart-section">
+            <div class="cart-container">
+              <h3>Added Items</h3>
+              <div class="cart-items" id="cartItems">
+                <table class="cart-table">
+                  <thead>
+                    <tr>
+                      <th>S.No</th>
+                      <th>Service Name</th>
+                      <th>Price</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="cartTableBody">
+                 
+                  </tbody>
+                </table>
+                <div class="no-items" id="noItems">
+                  <i class="fas fa-shopping-cart"></i>
+                  <p>No Items Added</p>
+                </div>
+              </div>
+
+              <div class="total-amount">
+                <h3>Total Amount: <span id="totalAmount">$0.00</span></h3>
+              </div>
+            </div>
+
+            <div class="booking-form-container">
+              <h3>Book Now</h3>
+              <form id="bookingForm">
+                <div class="form-group">
+                  <label for="fullName">Full Name</label>
+                  <input
+                    type="text"
+                    id="fullName"
+                    placeholder="Enter your name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email ID</label>
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="mailid@gmail.com"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    placeholder="000000000"
+                    required
+                  />
+                </div>
+                <button type="submit" class="btn-primary btn-book">
+                  Book Now
+                </button>
+              </form>
+              <div id="confirmationMessage" class="confirmation-message"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quality-section">
+      <div class="container">
+        <h2 id="about" class="section-title">Why Choose FreshClean?</h2>
+        <div class="quality-grid">
+          <div class="quality-item">
+            <div class="quality-icon">
+              <i class="fas fa-crown"></i>
+            </div>
+            <h3>Premium Services</h3>
+            <p>
+              Elevate your wardrobe with our meticulous dry cleaning, ensuring
+              garments look and feel as good as new.
+            </p>
+          </div>
+          <div class="quality-item">
+            <div class="quality-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h3>Quick Support</h3>
+            <p>
+              We're committed to providing prompt solutions to ensure your
+              experience is smooth and worry-free.
+            </p>
+          </div>
+          <div class="quality-item">
+            <div class="quality-icon">
+              <i class="fas fa-truck"></i>
+            </div>
+            <h3>Hassle Free Delivery</h3>
+            <p>
+              Enjoy seamless service with our convenient pickup and delivery
+              options, tailored to your schedule.
+            </p>
+          </div>
+          <div class="quality-item">
+            <div class="quality-icon">
+              <i class="fas fa-tag"></i>
+            </div>
+            <h3>Affordable Prices</h3>
+            <p>
+              Experience exceptional care without breaking the bank – our
+              affordable prices make laundry day stress-free.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   
+    <section class="newsletter-section">
+      <div class="container">
+        <div class="newsletter-content">
+          <h2>Subscribe to our newsletter</h2>
+          <p>Stay updated with our latest offers and services</p>
+          <form id="newsletterForm">
+            <div class="newsletter-inputs">
+              <input type="text" placeholder="Full name" required />
+              <input type="email" placeholder="Email" required />
+              <button type="submit" class="btn-primary">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="footer-logo">
+              <i class="fas fa-tshirt"></i>
+              <span>FreshClean</span>
+            </div>
+            <p>Lorem Ipsum Dolor Sit Amet Consectetur. Sed At Congue.</p>
+          </div>
+          <div class="footer-section">
+            <h4>Important Links</h4>
+            <ul>
+              <li><a href="#about">About us</a></li>
+              <li><a href="#contact">Contact us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of use</a></li>
+              <li><a href="#">Refund Policy</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4 id="contact">Contact</h4>
+            <p><i class="fas fa-envelope"></i> mail@site.com</p>
+            <p><i class="fas fa-phone"></i> +91 91234 56780</p>
+          </div>
+          <div class="footer-section">
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 FreshClean Laundry Services. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      emailjs.init('YOUR_USER_ID'); 
+    </script>
+  </body>
+</html>
